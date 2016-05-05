@@ -11,8 +11,9 @@ import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import javax.swing.border.Border;
 import javax.swing.*;
+import javax.swing.JOptionPane;
 
-public class GUI_project extends JFrame {
+public class TTTExample extends JFrame {
     private JMenuBar menuBar;
     private JButton button1;
     private JButton button2;
@@ -26,16 +27,16 @@ public class GUI_project extends JFrame {
     private TicTacToe TTT;
 
     //Constructor 
-    public GUI_project(){
+    public TTTExample(){
         TTT = new TicTacToe(2);
 
-        this.setTitle("GUI_project");
-        this.setSize(500,400);
+        this.setTitle("TTTExample");
+        this.setSize(310,310);
         //menu generate method
 
         //pane with null layout
         JPanel contentPane = new JPanel(null);
-        contentPane.setPreferredSize(new Dimension(500,400));
+        contentPane.setPreferredSize(new Dimension(310,310));
         contentPane.setBackground(new Color(192,192,192));
 
         button1 = new JButton();
@@ -44,7 +45,7 @@ public class GUI_project extends JFrame {
         button1.setForeground(new Color(0,0,0));
         button1.setEnabled(true);
         button1.setFont(new Font("sansserif",0,12));
-        button1.setText("Button1");
+        button1.setText("");
         button1.setVisible(true);
         //Set action for button click
         //Call defined method
@@ -60,7 +61,7 @@ public class GUI_project extends JFrame {
         button2.setForeground(new Color(0,0,0));
         button2.setEnabled(true);
         button2.setFont(new Font("sansserif",0,12));
-        button2.setText("Button2");
+        button2.setText("");
         button2.setVisible(true);
         //Set action for button click
         //Call defined method
@@ -76,7 +77,7 @@ public class GUI_project extends JFrame {
         button3.setForeground(new Color(0,0,0));
         button3.setEnabled(true);
         button3.setFont(new Font("sansserif",0,12));
-        button3.setText("Button3");
+        button3.setText("");
         button3.setVisible(true);
         //Set action for button click
         //Call defined method
@@ -92,7 +93,7 @@ public class GUI_project extends JFrame {
         button4.setForeground(new Color(0,0,0));
         button4.setEnabled(true);
         button4.setFont(new Font("sansserif",0,12));
-        button4.setText("Button4");
+        button4.setText("");
         button4.setVisible(true);
         //Set action for button click
         //Call defined method
@@ -108,7 +109,7 @@ public class GUI_project extends JFrame {
         button5.setForeground(new Color(0,0,0));
         button5.setEnabled(true);
         button5.setFont(new Font("sansserif",0,12));
-        button5.setText("Button5");
+        button5.setText("");
         button5.setVisible(true);
         //Set action for button click
         //Call defined method
@@ -124,7 +125,7 @@ public class GUI_project extends JFrame {
         button6.setForeground(new Color(0,0,0));
         button6.setEnabled(true);
         button6.setFont(new Font("sansserif",0,12));
-        button6.setText("Button6");
+        button6.setText("");
         button6.setVisible(true);
         //Set action for button click
         //Call defined method
@@ -140,7 +141,7 @@ public class GUI_project extends JFrame {
         button7.setForeground(new Color(0,0,0));
         button7.setEnabled(true);
         button7.setFont(new Font("sansserif",0,12));
-        button7.setText("Button7");
+        button7.setText("");
         button7.setVisible(true);
         //Set action for button click
         //Call defined method
@@ -156,7 +157,7 @@ public class GUI_project extends JFrame {
         button8.setForeground(new Color(0,0,0));
         button8.setEnabled(true);
         button8.setFont(new Font("sansserif",0,12));
-        button8.setText("Button8");
+        button8.setText("");
         button8.setVisible(true);
         //Set action for button click
         //Call defined method
@@ -172,7 +173,7 @@ public class GUI_project extends JFrame {
         button9.setForeground(new Color(0,0,0));
         button9.setEnabled(true);
         button9.setFont(new Font("sansserif",0,12));
-        button9.setText("Button9");
+        button9.setText("");
         button9.setVisible(true);
         //Set action for button click
         //Call defined method
@@ -208,19 +209,21 @@ public class GUI_project extends JFrame {
         Array.add(0);
         int var = TTT.click(new Field(Array));
         if(var == 0){
-            button1.setText("0");
+            button1.setText("X");
         }
         else if(var == 1){
-            button1.setText("1");
+            button1.setText("O");
         }
         else if(var == 2){
-            button1.setText("2");
+            button1.setText("X");
+            JOptionPane.showMessageDialog(null, "X Won!", "X Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else if(var == 3){
-            button1.setText("3");
+            button1.setText("O");
+            JOptionPane.showMessageDialog(null, "O Won!", "O Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
-            
+            JOptionPane.showMessageDialog(null,"You Cannot Click here.","You Cannot Click here.",JOptionPane.WARNING_MESSAGE);
         }
     }
 
@@ -231,19 +234,21 @@ public class GUI_project extends JFrame {
         Array.add(1);
         int var = TTT.click(new Field(Array));
         if(var == 0){
-            button2.setText("0");
+            button2.setText("X");
         }
         else if(var == 1){
-            button2.setText("1");
+            button2.setText("O");
         }
         else if(var == 2){
-            button2.setText("2");
+            button2.setText("X");
+            JOptionPane.showMessageDialog(null, "X Won!", "X Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else if(var == 3){
-            button2.setText("3");
+            button2.setText("O");
+            JOptionPane.showMessageDialog(null, "O Won!", "O Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
-            
+            JOptionPane.showMessageDialog(null,"You Cannot Click here.","You Cannot Click here.",JOptionPane.WARNING_MESSAGE);
         }
     }
 
@@ -254,19 +259,21 @@ public class GUI_project extends JFrame {
         Array.add(2);
         int var = TTT.click(new Field(Array));
         if(var == 0){
-            button3.setText("0");
+            button3.setText("X");
         }
         else if(var == 1){
-            button3.setText("1");
+            button3.setText("O");
         }
         else if(var == 2){
-            button3.setText("2");
+            button3.setText("X");
+            JOptionPane.showMessageDialog(null, "X Won!", "X Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else if(var == 3){
-            button3.setText("3");
+            button3.setText("O");
+            JOptionPane.showMessageDialog(null, "O Won!", "O Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
-            
+            JOptionPane.showMessageDialog(null,"You Cannot Click here.","You Cannot Click here.",JOptionPane.WARNING_MESSAGE);
         }
     }
 
@@ -277,19 +284,21 @@ public class GUI_project extends JFrame {
         Array.add(0);
         int var = TTT.click(new Field(Array));
         if(var == 0){
-            button4.setText("0");
+            button4.setText("X");
         }
         else if(var == 1){
-            button4.setText("1");
+            button4.setText("O");
         }
         else if(var == 2){
-            button4.setText("2");
+            button4.setText("X");
+            JOptionPane.showMessageDialog(null, "X Won!", "X Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else if(var == 3){
-            button4.setText("3");
+            button4.setText("O");
+            JOptionPane.showMessageDialog(null, "O Won!", "O Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
-            
+            JOptionPane.showMessageDialog(null,"You Cannot Click here.","You Cannot Click here.",JOptionPane.WARNING_MESSAGE);
         }
     }
 
@@ -300,19 +309,21 @@ public class GUI_project extends JFrame {
         Array.add(1);
         int var = TTT.click(new Field(Array));
         if(var == 0){
-            button5.setText("0");
+            button5.setText("X");
         }
         else if(var == 1){
-            button5.setText("1");
+            button5.setText("O");
         }
         else if(var == 2){
-            button5.setText("2");
+            button5.setText("X");
+            JOptionPane.showMessageDialog(null, "X Won!", "X Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else if(var == 3){
-            button5.setText("3");
+            button5.setText("O");
+            JOptionPane.showMessageDialog(null, "O Won!", "O Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
-            
+            JOptionPane.showMessageDialog(null,"You Cannot Click here.","You Cannot Click here.",JOptionPane.WARNING_MESSAGE);
         }
     }
 
@@ -323,19 +334,21 @@ public class GUI_project extends JFrame {
         Array.add(2);
         int var = TTT.click(new Field(Array));
         if(var == 0){
-            button6.setText("0");
+            button6.setText("X");
         }
         else if(var == 1){
-            button6.setText("1");
+            button6.setText("O");
         }
         else if(var == 2){
-            button6.setText("2");
+            button6.setText("X");
+            JOptionPane.showMessageDialog(null, "X Won!", "X Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else if(var == 3){
-            button6.setText("3");
+            button6.setText("O");
+            JOptionPane.showMessageDialog(null, "O Won!", "O Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
-            
+            JOptionPane.showMessageDialog(null,"You Cannot Click here.","You Cannot Click here.",JOptionPane.WARNING_MESSAGE);
         }
     }
 
@@ -346,19 +359,21 @@ public class GUI_project extends JFrame {
         Array.add(0);
         int var = TTT.click(new Field(Array));
         if(var == 0){
-            button7.setText("0");
+            button7.setText("X");
         }
         else if(var == 1){
-            button7.setText("1");
+            button7.setText("O");
         }
         else if(var == 2){
-            button7.setText("2");
+            button7.setText("X");
+            JOptionPane.showMessageDialog(null, "X Won!", "X Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else if(var == 3){
-            button7.setText("3");
+            button7.setText("O");
+            JOptionPane.showMessageDialog(null, "O Won!", "O Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
-            
+            JOptionPane.showMessageDialog(null,"You Cannot Click here.","You Cannot Click here.",JOptionPane.WARNING_MESSAGE);
         }
     }
 
@@ -369,19 +384,21 @@ public class GUI_project extends JFrame {
         Array.add(1);
         int var = TTT.click(new Field(Array));
         if(var == 0){
-            button8.setText("0");
+            button8.setText("X");
         }
         else if(var == 1){
-            button8.setText("1");
+            button8.setText("O");
         }
         else if(var == 2){
-            button8.setText("2");
+            button8.setText("X");
+            JOptionPane.showMessageDialog(null, "X Won!", "X Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else if(var == 3){
-            button8.setText("3");
+            button8.setText("O");
+            JOptionPane.showMessageDialog(null, "O Won!", "O Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
-            
+            JOptionPane.showMessageDialog(null,"You Cannot Click here.","You Cannot Click here.",JOptionPane.WARNING_MESSAGE);
         }
     }
 
@@ -392,19 +409,21 @@ public class GUI_project extends JFrame {
         Array.add(2);
         int var = TTT.click(new Field(Array));
         if(var == 0){
-            button9.setText("0");
+            button9.setText("X");
         }
         else if(var == 1){
-            button9.setText("1");
+            button9.setText("O");
         }
         else if(var == 2){
-            button9.setText("2");
+            button9.setText("X");
+            JOptionPane.showMessageDialog(null, "X Won!", "X Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else if(var == 3){
-            button9.setText("3");
+            button9.setText("O");
+            JOptionPane.showMessageDialog(null, "O Won!", "O Won!", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
-            
+            JOptionPane.showMessageDialog(null,"You Cannot Click here.","You Cannot Click here.",JOptionPane.WARNING_MESSAGE);
         }
     }
 
@@ -412,7 +431,7 @@ public class GUI_project extends JFrame {
         System.setProperty("swing.defaultlaf", "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
-                    new GUI_project();
+                    new TTTExample();
                 }
             });
     }
