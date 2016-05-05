@@ -4,23 +4,27 @@ public class Field
     public ArrayList<Integer> coord = new ArrayList<Integer>();
     public int player;
     public int row;
+    public int dim;
     public String note = "";
 
     public Field(ArrayList<Integer> coord,int player)
     {
         this.coord = coord;
         this.player= player;
+        dim        = coord.size();
     }
 
     public Field(ArrayList<Integer> coord)
     {
         this.coord = coord;
+        dim        = coord.size();
     }
 
     public Field(int row,ArrayList<Integer> coord)
     {
         this.coord = coord;
-        this.row = row;
+        this.row   = row;
+        dim        = coord.size();
     }
 
     public Field()

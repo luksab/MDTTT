@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Checker()
+comment1.params=Fields
+comment1.target=boolean\ checkWin(java.util.ArrayList)
+comment2.params=Fields
+comment2.target=java.util.ArrayList\ GetWin(java.util.ArrayList)
+comment3.params=Field\ Fields
+comment3.target=int\ realPlayerOf(Field,\ java.util.ArrayList)
+numComments=4
