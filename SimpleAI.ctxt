@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=
+comment0.target=SimpleAI()
+comment1.params=dim
+comment1.target=SimpleAI(int)
+comment10.params=Field\ Fields
+comment10.target=int\ realPlayerOf(Field,\ java.util.ArrayList)
+comment2.params=Fields
+comment2.target=Field\ setze(java.util.ArrayList)
+comment3.params=Fields\ sp
+comment3.target=Field\ setze(java.util.ArrayList,\ int)
+comment4.params=Fields
+comment4.target=Field\ randF(java.util.ArrayList)
+comment5.params=feld\ Fields
+comment5.target=boolean\ check(Field,\ java.util.ArrayList)
+comment6.params=Fields\ IOD
+comment6.target=Field\ fast(java.util.ArrayList,\ int)
+comment7.params=Fields\ sp
+comment7.target=Field\ FindLargestLine(java.util.ArrayList,\ int)
+comment8.params=Fields\ sp
+comment8.target=Field\ Zwickm\u00FChle(java.util.ArrayList,\ int)
+comment9.params=Fields\ sp
+comment9.target=Field\ FindLargestLineThread(java.util.ArrayList,\ int)
+numComments=11
