@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=Dim
+comment0.target=TicTacToe(int)
+comment1.params=
+comment1.target=int\ aiTurn()
+comment2.params=
+comment2.target=java.util.ArrayList\ getFields()
+comment3.params=Field
+comment3.target=int\ realPlayerOf(Field)
+comment4.params=Field
+comment4.target=boolean\ check(Field)
+comment5.params=field
+comment5.target=int\ click(Field)
+comment6.params=
+comment6.target=boolean\ checkWin()
+comment7.params=
+comment7.target=boolean\ checkTie()
+comment8.params=
+comment8.target=java.util.ArrayList\ getWin()
+numComments=9

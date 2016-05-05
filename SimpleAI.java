@@ -3,12 +3,8 @@ import java.util.*;
 import java.util.concurrent.*;
 public class SimpleAI
 {
-    int dim = 4;
+    int dim;
     ArrayList<Field> Possible;
-    public SimpleAI()
-    {
-
-    }
 
     public SimpleAI(int dim)
     {
