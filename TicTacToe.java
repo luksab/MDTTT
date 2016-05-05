@@ -6,19 +6,29 @@ public class TicTacToe
 {
     private ArrayList<Field> Fields = new ArrayList<Field>();
     private int dim;
+    private boolean nextPlayerIsPlayerOne = true;
     private boolean won;
     private boolean tie;
-    private Checker checker = new Checker();
+    private Checker checker;
     private SimpleAI ai;
 
-    public TicTacToe(int Dim){
+    public TicTacToe(int dim){
         this.dim = dim;
         ai = new SimpleAI(dim);
+        checker = new Checker(dim);
     }
 
     public int aiTurn(){
+        int sp;
         if(!tie && !won){
-            Fields.add(ai.setze(Fields));
+            if(nextPlayerIsPlayerOne)
+                sp = 0;
+            else
+                sp = 1;
+            Field field = ai.setze(Fields,sp);
+            field.player = sp;
+            Fields.add(field);
+            nextPlayerIsPlayerOne = !nextPlayerIsPlayerOne;
             if(checkWin())
                 return 1;
             return 0;
@@ -68,13 +78,17 @@ public class TicTacToe
     }
 
     public int click(Field field){
-        if(check(field) && !tie && !won && (field.player == 0 || field.player == 1)){
+        if(check(field) && !tie && !won){
+            if(nextPlayerIsPlayerOne)
+                field.player = 0;
+            else
+                field.player = 1;
+            Fields.add(field);
+            nextPlayerIsPlayerOne = !nextPlayerIsPlayerOne;
             if(checkWin()){
-                Fields.add(field);
                 return 1;
             }
             else{
-                Fields.add(field);
                 return 0;
             }
         }
@@ -84,13 +98,17 @@ public class TicTacToe
     }
 
     public boolean checkWin(){
-        if(checker.checkWin(Fields)){
-            won = true;
-            return true;
+        checkTie();
+        if(Fields.size() >= dim){
+            if(checker.checkWin(Fields)){
+                won = true;
+                return true;
+            }
+            else {return false;}
         }
-        else {return false;}
+        else{return false;}
     }
-    
+
     public boolean checkTie(){
         if(Fields.size() >= Math.pow(dim+1,dim)){
             tie = true;

@@ -4,14 +4,15 @@ import java.io.*;
 public class Checker implements
 java.io.Serializable
 {
-    public Checker()
+    private int dim;
+    public Checker(int dim)
     {
-
+        this.dim = dim;
     }
 
     public boolean checkWin(ArrayList<Field> Fields){
         boolean won = false;
-        int dim = Fields.get(0).dim;
+        System.out.println(Fields.size());
         Field lastField = Fields.get(Fields.size()-1);
         int[] P = new int[dim];
         int[] D = new int[dim];

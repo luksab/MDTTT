@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Checker()
+comment0.params=dim
+comment0.target=Checker(int)
 comment1.params=Fields
 comment1.target=boolean\ checkWin(java.util.ArrayList)
 comment2.params=Fields

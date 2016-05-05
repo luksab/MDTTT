@@ -11,42 +11,6 @@ public class SimpleAI
         this.dim = dim;
     }
 
-    public Field setze(ArrayList<Field> Fields)
-    {
-        if(Fields.size() > 1){
-            Field FastIch = fast(Fields,2);
-            if(FastIch.player == 0){
-                FastIch.note = "FastIch";
-                return FastIch;
-            }
-            Field FastGegner = fast(Fields,1);
-            if(FastGegner.player == 0){
-                FastGegner.note = "FastGegner";
-                return FastGegner;
-            }
-            Field Zwickmühle = Zwickmühle(Fields,0);
-            if(Zwickmühle.player == 0){
-                Zwickmühle.note = "Zwickmühle";
-                return Zwickmühle;
-            }
-            Field LL = FindLargestLine(Fields,2);
-            if(LL.player == 0){
-                LL.note = "LL";
-                return LL;
-            }
-            else{
-                Field randf = randF(Fields);
-                randf.note = "randF";
-                return randf;
-            }
-        }
-        else{
-            Field randf = randF(Fields);
-            randf.note = "randF";
-            return randf;
-        }
-    }
-
     public Field setze(ArrayList<Field> Fields, int sp)
     {
         int gg;

@@ -1,5 +1,5 @@
 #BlueJ class context
-comment0.params=Dim
+comment0.params=dim
 comment0.target=TicTacToe(int)
 comment1.params=
 comment1.target=int\ aiTurn()
