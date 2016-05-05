@@ -86,10 +86,10 @@ public class TicTacToe
             Fields.add(field);
             nextPlayerIsPlayerOne = !nextPlayerIsPlayerOne;
             if(checkWin()){
-                return 1;
+                return (field.player + 2);
             }
             else{
-                return 0;
+                return field.player;
             }
         }
         else{
