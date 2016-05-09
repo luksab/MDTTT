@@ -250,7 +250,6 @@ public class SimpleAI
                         BitteZiehen=CacheField;
                         BitteZiehen.player = 0;
                         BitteZiehen.row = longestLine;
-                        //System.out.println("LL:"+longestLine);
                     }
                 }
             }
@@ -288,16 +287,13 @@ public class SimpleAI
                                 PArray.add(P[m]);
                             }
                             Field PField = new Field(PArray);
-                            //System.out.println("SP"+realPlayerOf(PField,Fields));
                             if(realPlayerOf(PField,Fields) == sp){
                                 zaehler ++;
-                                //System.out.println("Z: "+zaehler);
                             }
                             else if(realPlayerOf(PField,Fields) == -1){
                                 //Frei:Ignorieren;
                                 CacheField.add(PField);
                                 //if(zaehler == 3)
-                                //    System.out.println("Cache="+PField);
                                 //jaa = true;
                             }
                             else{
@@ -309,7 +305,6 @@ public class SimpleAI
                                 P[m] += D[m];
                             }
                         }
-                        //System.out.println("Z:"+zaehler);
                         if(zaehler == dim-1 && jaa){
                             Reihen.add(CacheField);
                         }
@@ -317,25 +312,20 @@ public class SimpleAI
                 }
             }
         }
-        System.out.println("Zw: "+Reihen);
         for(int i=0;i<Reihen.size()-1;i++){
             for(int j=0;j<Reihen.size()-1;j++){
                 if(!Reihen.get(i).equals(Reihen.get(j))){
-                    //System.out.println("!EQ");
                     if(Reihen.get(i).hit(Reihen.get(j)) == 0){
                         BitteZiehen = Reihen.get(i).get(1);
-                        System.out.println("ZW0");
                         BitteZiehen.player = 0;
                     }
                     if(Reihen.get(i).hit(Reihen.get(j)) == 1){
                         BitteZiehen = Reihen.get(i).get(0);
-                        System.out.println("ZW1");
                         BitteZiehen.player = 0;
                     }
                 }
             }
         }
-        System.out.println("BZ: "+BitteZiehen);
         return BitteZiehen;
     }
 
@@ -372,7 +362,6 @@ public class SimpleAI
                     zähler++;
             }
             if(zähler == dim){
-                //System.out.println(" "+Fields.get(i).player);
                 return Fields.get(i).player;
             }
         }
@@ -475,7 +464,6 @@ class LongLine implements Runnable {
                     Field PField = new Field(PArray);
                     if(realPlayerOf(PField,Fields) == sp){
                         zaehler ++;
-                        //System.out.println("Z: "+zaehler);
                     }
                     else if(realPlayerOf(PField,Fields) == -1){
                         //Frei:Ignorieren;
@@ -495,7 +483,6 @@ class LongLine implements Runnable {
                     BitteZiehen=CacheField;
                     BitteZiehen.player = 0;
                     BitteZiehen.row = longestLine;
-                    //System.out.println("LL:"+longestLine);
                 }
             }
         }
