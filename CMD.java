@@ -68,7 +68,8 @@ public class CMD {
                         else if(click == -1){
                             System.out.println("You put in invalid Coordinates");
                         }
-                        if(TTT.checkWin()){
+                        if(TTT.checkTie()){
+                            System.out.println("That is a Tie!");
                             gameHasEnded=true;
                         }
                     }
