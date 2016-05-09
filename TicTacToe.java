@@ -109,6 +109,20 @@ public class TicTacToe
         else{return false;}
     }
 
+    public boolean checkEnd(){
+        if(checkTie()){
+            return true;
+        }
+        else if(Fields.size() >= dim){
+            if(checker.checkWin(Fields)){
+                won = true;
+                return true;
+            }
+            else {return false;}
+        }
+        else{return false;}
+    }
+
     public boolean checkTie(){
         if(Fields.size() >= Math.pow(dim+1,dim)){
             tie = true;
