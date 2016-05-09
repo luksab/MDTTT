@@ -54,7 +54,8 @@ public class CMD {
                             if(AI){
                                 int ai = TTT.aiTurn();
                                 if(ai == 0){
-                                    System.out.println("AI has drawn.");
+                                    System.out.print("AI has drawn with ");
+                                    System.out.println(""+TTT.getFields().get(TTT.getFields().size()-1).toString()+"");
                                 }
                                 if(ai == 1){
                                     System.out.println("You lost against my AI :P");
