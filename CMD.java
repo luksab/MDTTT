@@ -51,6 +51,15 @@ public class CMD {
                         int click = TTT.click(field);
                         if(click == 0||click == 1){
                             System.out.println("Player "+(click+1)+" has drawn");
+                            if(AI){
+                                int ai = TTT.aiTurn();
+                                if(ai == 0){
+                                    System.out.println("AI has drawn.");
+                                }
+                                if(ai == 1){
+                                    System.out.println("You lost against my AI :P");
+                                }
+                            }
                         }
                         else if(click == 2||click == 3){
                             System.out.println("Player "+(click-1)+" has won");
@@ -58,6 +67,8 @@ public class CMD {
                         }
                         else if(click == -1){
                             System.out.println("You put in invalid Coordinates");
+                        }
+                        if(TTT.checkWin()){
                             gameHasEnded=true;
                         }
                     }
