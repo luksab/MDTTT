@@ -4,10 +4,60 @@ import java.util.concurrent.*;
 public class SimpleAI
 {
     int dim;
+    int hardness;
     ArrayList<Field> Possible;
     public SimpleAI(int dim)
     {
         this.dim = dim;
+    }
+
+    public SimpleAI(int dim, int hardness)
+    {
+        this.dim = dim;
+        this.hardness = hardness;
+    }
+
+    public Field setzeWH(ArrayList<Field> Fields, int sp)
+    {
+        int gg;
+        if(sp == 1)
+            gg = 0;
+        else
+            gg = 1;
+        if(Fields.size() > 1 && hardness > 0){
+            Field FastIch = fast(Fields,2);
+            if(FastIch.player == 0){
+                FastIch.note = "FastIch";
+                return FastIch;
+            }
+            Field FastGegner = fast(Fields,1);
+            if(FastGegner.player == 0){
+                FastIch.note = "FastIch";
+                return FastGegner;
+            }
+            if(hardness > 3){
+                Field Zwickmühle = Zwickmühle(Fields,gg);
+                if(Zwickmühle.player == 0){
+                    Zwickmühle.note = "Zwickmühle";
+                    return Zwickmühle;
+                }
+            }
+            if(hardness > 2){
+                Field LL = FindLargestLineThread(Fields,sp);
+                if(LL.player == 0){
+                    LL.note = "LL";
+                    return LL;
+                }
+                else{
+                    Field randf = randF(Fields);
+                    randf.note = "randF";
+                    return randf;
+                }
+            }
+        }
+        Field randf = randF(Fields);
+        randf.note = "randF";
+        return randf;
     }
 
     public Field setze(ArrayList<Field> Fields, int sp)

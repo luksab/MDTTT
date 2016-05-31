@@ -17,6 +17,12 @@ public class TicTacToe
         ai = new SimpleAI(dim);
         checker = new Checker(dim);
     }
+    
+    public TicTacToe(int dim, int hardness){
+        this.dim = dim;
+        ai = new SimpleAI(dim, hardness);
+        checker = new Checker(dim);
+    }
 
     public int aiBattle(){
         while(!tie && !won){
@@ -35,7 +41,7 @@ public class TicTacToe
                 sp = 0;
             else
                 sp = 1;
-            Field field = ai.setze(Fields,sp/*,true*/);
+            Field field = ai.setze(Fields,sp);
             field.player = sp;
             Fields.add(field);
             nextPlayerIsPlayerOne = !nextPlayerIsPlayerOne;
