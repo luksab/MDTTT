@@ -12,7 +12,7 @@ java.io.Serializable
 
     public boolean checkWin(ArrayList<Field> Fields){
         boolean won = false;
-        System.out.println(Fields.size());
+        //System.out.println(Fields.size());
         Field lastField = Fields.get(Fields.size()-1);
         int[] P = new int[dim];
         int[] D = new int[dim];

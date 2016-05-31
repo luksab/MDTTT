@@ -5,7 +5,6 @@ public class SimpleAI
 {
     int dim;
     ArrayList<Field> Possible;
-
     public SimpleAI(int dim)
     {
         this.dim = dim;
@@ -52,13 +51,72 @@ public class SimpleAI
         }
     }
 
+    public Field setze(ArrayList<Field> Fields, int sp, boolean abc)
+    {
+        int gg;
+        if(sp == 1)
+            gg = 0;
+        else
+            gg = 1;
+        if(Fields.size() > 1){
+            long startTime = System.nanoTime();
+            Field FastIch = fast(Fields,2);
+            long durationFastIch = (System.nanoTime() - startTime);
+            System.out.println("FI "+durationFastIch/ 1000000000.0);
+            if(FastIch.player == 0){
+                FastIch.note = "FastIch";
+                return FastIch;
+            }
+            startTime = System.nanoTime();
+            Field FastGegner = fast(Fields,1);
+            long durationFastGG = (System.nanoTime() - startTime);
+            System.out.println("FG "+durationFastGG/ 1000000000.0);
+            if(FastGegner.player == 0){
+                FastIch.note = "FastIch";
+                return FastGegner;
+            }
+            startTime = System.nanoTime();
+            Field Zwickmühle = Zwickmühle(Fields,gg);
+            long durationZWm = (System.nanoTime() - startTime);
+            System.out.println("Zm "+durationZWm/ 1000000000.0);
+            if(Zwickmühle.player == 0){
+                Zwickmühle.note = "Zwickmühle";
+                return Zwickmühle;
+            }
+            startTime = System.nanoTime();
+            Field LL = FindLargestLineThread(Fields,sp);
+            long durationLL = (System.nanoTime() - startTime);
+            System.out.println("LL "+durationLL/ 1000000000.0);
+            if(LL.player == 0){
+                LL.note = "LL";
+                return LL;
+            }
+            else{
+                startTime = System.nanoTime();
+                Field randf = randF(Fields);
+                long durationRandF = (System.nanoTime() - startTime);
+                System.out.println("randF "+durationRandF/ 1000000000.0);
+                randf.note = "randF";
+                return randf;
+            }
+        }
+        else{
+            long startTime = System.nanoTime();
+            Field randf = randF(Fields);
+            long durationRandF = (System.nanoTime() - startTime);
+            System.out.println("randF "+durationRandF/ 1000000000.0);
+            randf.note = "randF";
+            return randf;
+        }
+    }
+
     private Field randF(ArrayList<Field> Fields){
         ArrayList<Integer> Koord = new ArrayList<Integer>();
         boolean ja = false;
         if(dim%2 == 0){
             //grade dimensionszahl = es gibt EINE Mitte
             for(int i=0;i<dim;i++){
-                Koord.add(dim/2);
+                Koord.add((int)dim/2);
             }
             if(check(new Field(Koord),Fields)){
                 return new Field(Koord);
@@ -98,6 +156,7 @@ public class SimpleAI
         }
         return new Field(Koord);
     }
+
     public boolean check(Field feld, ArrayList<Field> Fields){
         if(feld.dim == dim){
             try{
