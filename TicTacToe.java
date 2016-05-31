@@ -18,6 +18,16 @@ public class TicTacToe
         checker = new Checker(dim);
     }
 
+    public int aiBattle(){
+        while(!tie && !won){
+            aiTurn();
+        }
+        if(tie){
+            return 0;
+        }
+        return Fields.get(Fields.size()-1).player;
+    }
+
     public int aiTurn(){
         int sp;
         if(!tie && !won){
@@ -25,7 +35,7 @@ public class TicTacToe
                 sp = 0;
             else
                 sp = 1;
-            Field field = ai.setze(Fields,sp);
+            Field field = ai.setze(Fields,sp/*,true*/);
             field.player = sp;
             Fields.add(field);
             nextPlayerIsPlayerOne = !nextPlayerIsPlayerOne;
@@ -98,8 +108,31 @@ public class TicTacToe
     }
 
     public boolean checkWin(){
+        //long startTime = System.nanoTime();
         checkTie();
         if(Fields.size() >= dim){
+            if(checker.checkWin(Fields)){
+                won = true;
+                //long durationCheck = (System.nanoTime() - startTime);
+                //System.out.println("check "+durationCheck/ 1000000000.0);
+                return true;
+            }
+            else {
+                //long durationCheck = (System.nanoTime() - startTime);
+                //System.out.println("check "+durationCheck/ 1000000000.0);
+                return false;}
+        }
+        else{
+            //long durationCheck = (System.nanoTime() - startTime);
+            //System.out.println("check "+durationCheck/ 1000000000.0);
+            return false;}
+    }
+
+    public boolean checkEnd(){
+        if(checkTie()){
+            return true;
+        }
+        else if(Fields.size() >= dim){
             if(checker.checkWin(Fields)){
                 won = true;
                 return true;

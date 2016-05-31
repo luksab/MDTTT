@@ -21,6 +21,7 @@ dependency7.from=TTTExample
 dependency7.to=Field
 dependency7.type=UsesDependency
 objectbench.height=76
+<<<<<<< HEAD
 objectbench.width=830
 package.editor.height=369
 package.editor.width=732
@@ -28,6 +29,15 @@ package.editor.x=239
 package.editor.y=134
 package.numDependencies=7
 package.numTargets=5
+=======
+objectbench.width=1060
+package.editor.height=399
+package.editor.width=962
+package.editor.x=410
+package.editor.y=171
+package.numDependencies=5
+package.numTargets=4
+>>>>>>> refs/remotes/origin/master
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
